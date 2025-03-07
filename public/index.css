@@ -54,26 +54,29 @@ h1,h2,h3,h4{
 }
 .main_window{
     display: flex;
+    flex-wrap: wrap;
     margin-left: 176px;
     margin-top: 16px;
-    width: calc(100% - 176px) !important;
     height: 1000px;
 }
 .block{
-    margin: 10px;
+    margin: 1%;
     text-align: center;
     padding-top: 10px;
     font-size: 20px;
+    width: 48%;
+    background-color: red;
+    border-radius: 30px;
     transition: 0.15s ease;
+    padding: 1%;
+    max-height: 800px;
 }
 .block:hover{
     box-shadow: 0 0 20px rgb(255, 0, 0);
 }
 .div_block{
-    background-color: red;
-    width: 300px;
-    height: 150px;
-    border-radius: 30px;
+    display: flex;
+    text-align: left;
 }
 .tag_window{
     position: absolute;
@@ -92,4 +95,8 @@ h1,h2,h3,h4{
 }
 .video_window{
     position: relative;
+}
+.article_title{
+    font-weight: bold; 
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
