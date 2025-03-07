@@ -53,30 +53,27 @@ h1,h2,h3,h4{
     margin: 10px;
 }
 .main_window{
+    display: flex;
     margin-left: 176px;
     margin-top: 16px;
+    width: calc(100% - 176px) !important;
+    height: 1000px;
 }
 .block{
-    background-color: red;
-    width: 300px;
-    height: 150px;
-    margin: 50px;
+    margin: 10px;
     text-align: center;
     padding-top: 10px;
-    border-radius: 30px;
     font-size: 20px;
     transition: 0.15s ease;
-
 }
 .block:hover{
     box-shadow: 0 0 20px rgb(255, 0, 0);
-
 }
-.a1{
-    display: flex;
-    justify-content: center;
-    
-    /*<!-- 2 x 8 -->*/
+.div_block{
+    background-color: red;
+    width: 300px;
+    height: 150px;
+    border-radius: 30px;
 }
 .tag_window{
     position: absolute;
