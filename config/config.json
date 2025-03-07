@@ -1,0 +1,9 @@
+{
+    "development": {
+      "username": "denwer",
+      "password": "local",
+      "database": "denwerdb",
+      "host": "127.0.0.1",
+      "dialect": "postgres"
+    }
+  }
