@@ -25,16 +25,22 @@ export class AppModule {}
 */
 import { SequelizeModule } from '@nestjs/sequelize';
 import { ElevionModule } from './elevion/elevion.module';
+import { User } from './elevion/user.model';
+
 
 @Module({
   imports: [
+    ConfigModule.forRoot({
+      envFilePath: '.env'
+    }),
     SequelizeModule.forRoot({
       dialect: 'postgres',
-      host: 'localhost',
-      port: 5432,
-      username: 'postgres',
-      password: 'root',
-      database: 'denwerdb',
+      host: process.env.POSTGRES_HOST,
+      port: Number(process.env.POSTGRES_PORT),
+      username: process.env.POSTGRES_USER,
+      password: process.env.POSTGRES_PASSWORD,
+      database: process.env.POSTGRES_DB,
+      models: [User],
       autoLoadModels: true,
     }),
     ServeStaticModule.forRoot({

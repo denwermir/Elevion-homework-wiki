@@ -2,11 +2,23 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { ElevionService } from './elevion.service';
 import { CreateElevionDto } from './dto/create-elevion.dto';
 import { UpdateElevionDto } from './dto/update-elevion.dto';
+import { CreateUserDto } from './dto/create-user.dto';
 
 @Controller('elevion')
 export class ElevionController {
-  constructor(private readonly elevionService: ElevionService) {}
+  constructor(private elevionService: ElevionService) {}
 
+  @Post()
+  create(@Body() userDto: CreateUserDto){
+    return this.elevionService.createUser(userDto);
+  }
+
+  @Get()
+  getall(){
+    return this.elevionService.getAllUsers();
+  }
+
+/*
   @Post()
   create(@Body() createElevionDto: CreateElevionDto) {
     return this.elevionService.create(createElevionDto);
@@ -30,5 +42,5 @@ export class ElevionController {
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.elevionService.remove(+id);
-  }
+  }*/
 }
