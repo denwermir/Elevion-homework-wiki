@@ -1,20 +1,25 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { ElevionService } from './elevion.service';
-import { CreateElevionDto } from './dto/create-elevion.dto';
-import { UpdateElevionDto } from './dto/update-elevion.dto';
 import { CreateUserDto } from './dto/create-user.dto';
+import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { User } from './user.model';
 
+@ApiTags('Данные')
 @Controller('elevion')
 export class ElevionController {
   constructor(private elevionService: ElevionService) {}
 
+  @ApiOperation({summary: 'Создание пользователя'})
+  @ApiResponse({status: 200, type: User})
   @Post()
   create(@Body() userDto: CreateUserDto){
     return this.elevionService.createUser(userDto);
   }
 
+  @ApiOperation({summary: 'Получение всех пользователей'})
+  @ApiResponse({status: 200, type: [User]})
   @Get()
-  getall(){
+  getAll(){
     return this.elevionService.getAllUsers();
   }
 

@@ -26,6 +26,9 @@ export class AppModule {}
 import { SequelizeModule } from '@nestjs/sequelize';
 import { ElevionModule } from './elevion/elevion.module';
 import { User } from './elevion/user.model';
+import { RolesModule } from './roles/roles.module';
+import { Roles } from './roles/roles.model';
+import { UserRoles } from './roles/user-roles.model';
 
 
 @Module({
@@ -40,13 +43,14 @@ import { User } from './elevion/user.model';
       username: process.env.POSTGRES_USER,
       password: process.env.POSTGRES_PASSWORD,
       database: process.env.POSTGRES_DB,
-      models: [User],
+      models: [User, Roles, UserRoles],
       autoLoadModels: true,
     }),
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'public'),
     }),
     ElevionModule,
+    RolesModule,
   ],
 })
 export class AppModule {}
