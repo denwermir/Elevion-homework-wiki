@@ -6,7 +6,6 @@ import { AppController } from './data/app.controller';
 import { AppService } from './data/app.service';
 //import { ProductsModule } from './products/products.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { TypeOrmModule } from '@nestjs/typeorm';
 /*
 @Module({
   imports: [
@@ -24,11 +23,13 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 export class AppModule {}
 */
 import { SequelizeModule } from '@nestjs/sequelize';
-import { ElevionModule } from './elevion/elevion.module';
-import { User } from './elevion/user.model';
+import { UsersModule } from './users/users.module';
+import { User } from './users/user.model';
 import { RolesModule } from './roles/roles.module';
 import { Roles } from './roles/roles.model';
 import { UserRoles } from './roles/user-roles.model';
+import { AuthModule } from './auth/auth.module';
+import { ArticlesModule } from './articles/articles.module';
 
 
 @Module({
@@ -49,9 +50,12 @@ import { UserRoles } from './roles/user-roles.model';
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'public'),
     }),
-    ElevionModule,
+    UsersModule,
     RolesModule,
+    AuthModule,
+    ArticlesModule,
   ],
+  
 })
 export class AppModule {}
 

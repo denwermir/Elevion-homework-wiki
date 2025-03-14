@@ -3,8 +3,8 @@ import { RolesController } from './roles.controller';
 import { RolesService } from './roles.service';
 import { Roles } from './roles.model';
 import { SequelizeModule } from '@nestjs/sequelize';
-import { User } from 'src/elevion/user.model';
 import { UserRoles } from './user-roles.model';
+import { User } from 'src/users/user.model';
 
 @Module({
   controllers: [RolesController],

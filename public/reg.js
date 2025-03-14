@@ -1,3 +1,4 @@
+/*
 //Инициализация кнопок
 const CreateAccountButton = document.getElementById('CAB')
 CreateAccountButton.addEventListener('click', CreateUserButton)
@@ -17,4 +18,11 @@ function CreateUserButton(){
         body: JSON.stringify(data),
     })
 }
-    
+    */
+
+const CreateAccountButton = document.getElementById('CAB')
+CreateAccountButton.addEventListener('click', CreateUserButton)
+
+function CreateUserButton(){
+    history.pushState(null, null, "curLoc");
+}

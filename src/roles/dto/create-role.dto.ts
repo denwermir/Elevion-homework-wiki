@@ -1,5 +1,4 @@
-export class CreateRoleDto{
-    readonly value: string
-    readonly description: string
-    
-}
+export interface CreateRoleDto {
+    value: string;
+    description: string;
+  }
