@@ -3,14 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="index.css">
 </head>
-<body>  
-    <div>Никнейм <input title="text" type="text" id="username"> </div>
-    <div>Почта <input title="text" type="text" id="email"> </div>
-    <div>Пароль <input title="text" type="text" id="password"> </div>
-    <br>
-    <button id="CAB">Зарегистрироваться</button>
+<body>
+    <div class="register_window">
+        <div class="register_window_caption">
+            <h2>Никнейм</h2>
+            <h2>Почта</h2>
+            <h2>Пароль</h2>
+        </div>
+        <div class="register_window_input">
+            <input class="register_input" title="text" type="text" id="username">
+            <input class="register_input" title="text" type="text" id="email">
+            <input class="register_input" title="text" type="text" id="password">
+        </div>
+        <div class="outer_register_button">
+            <button id="CAB" class="register_button">Зарегистрироваться</button>
+        </div>
+        </div>
     <script src="reg.js"></script>
 </body>
 </html>
