@@ -56,7 +56,6 @@ h1,h2,h3,h4{
     flex-wrap: wrap;
     margin-left: 176px;
     margin-top: 16px;
-    height: 1000px;
 }
 .block{
     margin: 1%;
@@ -69,6 +68,7 @@ h1,h2,h3,h4{
     transition: 0.15s ease;
     padding: 1%;
     max-height: 800px;
+    height: 20%;
 }
 .block:hover{
     box-shadow: 0 0 20px rgb(255, 0, 0);
