@@ -5,7 +5,7 @@ import * as path from 'path';
 @Injectable()
 export class ArticlesService {
   //private readonly folderPath = path.join(__dirname, '..', 'article'); // Путь к папке
-  private readonly folderPath = path.join('C:/Users/User/Desktop/test/Elevion-homework-wiki-1/Elevion-homework-wiki/public/articles'); // Путь к папке
+  private readonly folderPath = path.join('C:/Users/User/Desktop/test/Elevion-homework-wiki/public/articles/'); // Путь к папке
 
   countHtmlFiles(folderPath: string): { count: number; files: string[] } {
     try {

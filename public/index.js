@@ -41,7 +41,7 @@ window.addEventListener('DOMContentLoaded', fetchHtmlFiles);
 
 async function fetchHtmlFiles() {
     // Отправляем GET-запрос к эндпоинту
-    const response = await fetch('/api/files/count-html?folder=C:/Users/User/Desktop/test/Elevion-homework-wiki-1/Elevion-homework-wiki/public/articles');
+    const response = await fetch('/api/files/count-html?folder=C:/Users/User/Desktop/test/Elevion-homework-wiki/public/articles');
 
     // Проверяем, успешен ли запрос
     if (!response.ok) {
