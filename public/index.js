@@ -40,10 +40,10 @@ window.addEventListener('DOMContentLoaded', fetchHtmlFiles);
 // Функция для вытягивания линии по высоте
 window.onload = function (){
   var line = document.getElementById('line');
-const  page_height = document.body.clientHeight;
-line.style.height = (page_height)+'px';
-console.log("done!");
-}
+  const page_height = document.documentElement.scrollHeight;
+  line.style.height = (page_height)+'px';
+  console.log("done!");
+  }
 
 async function fetchHtmlFiles() {
     // Отправляем GET-запрос к эндпоинту
@@ -92,6 +92,3 @@ async function fetchHtmlFiles() {
         console.log(`Файл ${i}.html успешно загружен.`);
     }
 }
-
-// Вызываем функцию при загрузке страницы
-window.addEventListener('DOMContentLoaded', fetchHtmlFiles);
