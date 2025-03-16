@@ -37,7 +37,13 @@
 window.addEventListener('DOMContentLoaded', fetchHtmlFiles);
 
 */
-
+// Функция для вытягивания линии по высоте
+window.onload = function (){
+  var line = document.getElementById('line');
+const  page_height = document.body.clientHeight;
+line.style.height = (page_height)+'px';
+console.log("done!");
+}
 
 async function fetchHtmlFiles() {
     // Отправляем GET-запрос к эндпоинту
