@@ -3,13 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Авторизация</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>  
-    <div>Почта <input title="text" type="text" id="email"> </div>
-    <div>Пароль <input title="text" type="text" id="password"> </div>
-    <br>
-    <button id="CAB">Войти</button>
+    <div class="register_window">
+        <div class="register_window_caption">
+            <h2>Почта</h2>
+            <h2>Пароль</h2>
+        </div>
+        <div class="register_window_input">
+            <input class="register_input" title="text" type="text" id="email">
+            <input class="register_input" title="text" type="text" id="password">
+        </div>
+        <div class="outer_register_button">
+            <button id="CAB" class="register_button">Войти</button>
+        </div>
+        </div>
+    
     <script src="aut.js"></script>
 </body>
 </html>
