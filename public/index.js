@@ -38,12 +38,7 @@ window.addEventListener('DOMContentLoaded', fetchHtmlFiles);
 
 */
 // Функция для вытягивания линии по высоте
-window.onload = function (){
-  var line = document.getElementById('line');
-  const page_height = document.documentElement.scrollHeight;
-  line.style.height = (page_height)+'px';
-  console.log("done!");
-  }
+
 
 async function fetchHtmlFiles() {
     // Отправляем GET-запрос к эндпоинту
@@ -90,5 +85,11 @@ async function fetchHtmlFiles() {
         div.innerHTML = html;
 
         console.log(`Файл ${i}.html успешно загружен.`);
+
     }
+    var line = document.getElementById('line');
+    const  page_height = document.body.clientHeight;
+    line.style.height = (page_height+300)+'px';
+    console.log("done!");
 }
+window.addEventListener('DOMContentLoaded', fetchHtmlFiles);
