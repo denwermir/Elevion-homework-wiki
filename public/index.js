@@ -1,5 +1,9 @@
 
-
+window.onload = function (){
+  var line = document.getElementById('line');
+  const page_height = document.documentElement.scrollHeight;
+  line.style.height = (page_height)+'px';
+  }
 async function fetchHtmlFiles() {
   // Отправляем GET-запрос к эндпоинту
   const response = await fetch('/api/files/count-html?folder=C:/Users/User/Desktop/test/Elevion/Elevion-homework-wiki/public/articles');
@@ -47,10 +51,7 @@ async function fetchHtmlFiles() {
       console.log(`Файл ${i}.html успешно загружен.`);
 
     }
-    var line = document.getElementById('line');
-    const  page_height = document.body.clientHeight;
-    line.style.height = (page_height+300)+'px';
-    console.log("done!");
+
 }
 
 window.addEventListener('DOMContentLoaded', fetchHtmlFiles);
