@@ -14,7 +14,9 @@ export class AuthService {
 
         async login(userDto: CreateUserDto){
             const user = await this.validateUser(userDto)
-            return this.generateToken(user)
+            //return this.generateToken(user)
+            return user;
+
         }
     
         async registration(userDto: CreateUserDto){
@@ -22,9 +24,10 @@ export class AuthService {
             if (candidate){
                 throw new HttpException('Пользователь с таким email существует', HttpStatus.BAD_REQUEST)
             }
-            const hashPassword = await bcrypt.hash(userDto.password, 5);
-            const user = await this.userService.createUser({...userDto, password: hashPassword})
-            return this.generateToken(user) 
+            //const hashPassword = await bcrypt.hash(userDto.password, 5);
+            //const user = await this.userService.createUser({...userDto, password: hashPassword})
+            //return this.generateToken(user) 
+            return candidate;
 
         }
 
@@ -37,11 +40,16 @@ export class AuthService {
 
         private async validateUser (userDto: CreateUserDto){
             const user = await this.userService.getUserByEmail(userDto.email);
-            const passwordEquals = await bcrypt.compare(userDto.password, user!.password);
-            if (user && passwordEquals){
+            const passwordEquals = await this.userService.getUserByPassword(userDto.password);
+            if (user?.password == passwordEquals?.password)
+            {
                 return user;
             }
-            throw new HttpException("Неккоректный email или пароль", HttpStatus.BAD_REQUEST)
+            else
+            {
+                throw new HttpException("Неккоректный email или пароль", HttpStatus.BAD_REQUEST)
+
+            }
         }
 
 }
