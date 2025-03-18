@@ -1,24 +1,29 @@
-/*
-//Инициализация кнопок
-const CreateAccountButton = document.getElementById('CAB')
-CreateAccountButton.addEventListener('click', CreateUserButton)
-let AccountCreateMessage = "Аккаунт " + username + " успешно создан!"
-
-//Функция создания пользователя
-function CreateUserButton(){
-    let username = document.getElementById('username').value
-    let email = document.getElementById("email").value
-    let password = document.getElementById("password").value
-    const data = { username, email, password };
-
-    //Отправка запроса для создания пользователя
-    fetch('/api/elevion',{
-        method: 'Post',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-    })
-}
-    */
+let email = localStorage.getItem("email")
+let password = localStorage.getItem("password")
+const data = { email, password };
+let rpassword, remail, rusername
+fetch('/api/auth/login',{
+  method: 'Post',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(data),
+})
+.then(response => {
+  if (!response.ok) {
+    throw new Error(`Ошибка HTTP: ${response.status}`);
+  }
+  return response.json();
+})
+.then(returned => {
+  console.log('Ответ от сервера:', returned);
+  if (returned.password) {
+    window.location.href = "profile.html";
+  } else {
+    console.log('Пароль не найден.');
+  }
+})
+.catch(error => {
+  console.error('Ошибка при отправке запроса:', error.message);
+});
 
 const CreateAccountButton = document.getElementById('CAB')
 CreateAccountButton.addEventListener('click', CreateUserButton)
@@ -27,6 +32,11 @@ const Back = document.getElementById('Back')
 Back.addEventListener('click', back)
 function back(){
     window.location.href = "index.html";
+}   
+const Alter = document.getElementById('Alter')
+Alter.addEventListener('click', AlterF)
+function AlterF(){
+    window.location.href = "authorise.html";
 }   
 
 function CreateUserButton(){
@@ -43,14 +53,12 @@ function CreateUserButton(){
     })
     
     .then(response => {
-        // Проверяем, успешен ли запрос
         if (!response.ok) {
           throw new Error(`Ошибка HTTP: ${response.status}`);
         }
-        return response.json(); // Парсим JSON-ответ
+        return response.json(); 
       })
       .then(returned => {
-        // Обрабатываем данные от сервера
         console.log('Ответ от сервера:', returned);
         if (returned.password) {
             

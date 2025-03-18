@@ -35,6 +35,7 @@ h1,h2,h3,h4{
     flex-direction: row-reverse;
     height: 160px;
 }
+
 .topside_tag{
     margin-right: 20px;
     height: 30px;
@@ -48,6 +49,7 @@ h1,h2,h3,h4{
 .topside_tag:hover{
     background-color: #ffffff71;
 }
+
 .input_outer{
     margin: 10px;
 }
@@ -62,7 +64,7 @@ h1,h2,h3,h4{
     text-align: center;
     padding-top: 10px;
     font-size: 20px;
-    width: 46%;
+    width: 100%;
     background-color: red;
     border-radius: 30px;
     transition: 0.15s ease;
@@ -136,13 +138,14 @@ h2{
     margin: 5px;
 }
 .register_button{
-    margin-left: 40px;
-    width: 80%;
+    margin-right: 10px;
+    margin-left: 10px;
+    width: 95%;
     height: 50px;
     font-size: 17px;
-	border: none;
-	padding: 0;
-	cursor: pointer;
+    border: none;
+    padding: 0;
+    cursor: pointer;
     border-radius: 10px;
 }
 .outer_register_button{
@@ -179,4 +182,14 @@ h2{
 
 .close-button:hover {
     color: red;
+}
+
+.inner{
+    display: flex;
+}
+
+ .secondP {
+    width: 16px;
+    height: 170px;
+    margin-left: 160px;
 }
