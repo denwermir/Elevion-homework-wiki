@@ -75,6 +75,7 @@ function CreateUserButton(){
         localStorage.setItem("email", remail)
     
         console.log(remail, rusername, rpassword)
+        window.location.href = "profile.html";
       })
       .catch(error => {
         console.error('Ошибка при отправке запроса:', error.message);
